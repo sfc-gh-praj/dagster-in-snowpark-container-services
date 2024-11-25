@@ -1,0 +1,13 @@
+dagster==1.9.0
+dagster-webserver==1.9.0
+dagster-graphql==1.9.0
+# dagster-postgres==0.25.0
+# dagster-duckdb
+snowflake-snowpark-python[pandas]
+pandas
+python-dotenv
+pandas
+# plotly
+# shapely
+# geopandas
+# kaleido

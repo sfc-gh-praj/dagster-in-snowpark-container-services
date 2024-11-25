@@ -1,0 +1,17 @@
+version: "3"
+services:
+    dagster:
+        image: dagster-web-ui:latest
+        ports:
+            - 3000:3000
+        environment:
+          - SNOWFLAKE_ACCOUNT=${SNOWFLAKE_ACCOUNT}
+          - SNOWFLAKE_USER=${SNOWFLAKE_USER}
+          - SNOWFLAKE_PASSWORD=${SNOWFLAKE_PASSWORD}
+          - SNOWFLAKE_DATABASE=${SNOWFLAKE_DATABASE}
+          - SNOWFLAKE_SCHEMA=${SNOWFLAKE_SCHEMA}
+          - SNOWFLAKE_WAREHOUSE=${SNOWFLAKE_WAREHOUSE}
+          - SNOWFLAKE_ROLE=${SNOWFLAKE_ROLE}
+          - DAGSTER_HOME=/opt/dagster/dagster_home
+        volumes:
+          - ./dagster_home:/opt/dagster/dagster_home

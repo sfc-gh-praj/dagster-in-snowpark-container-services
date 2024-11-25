@@ -1,0 +1,22 @@
+spec:
+  container:  
+    - name: dagster
+      image: sfsenorthamerica-praj01.registry.snowflakecomputing.com/dagsterdb/public/images/dagster-web-ui-new:latest
+      volumeMounts: 
+        - name: dagster-data
+          mountPath: /opt/dagster/dagster_home
+      env:
+        SNOWFLAKE_WAREHOUSE: small_warehouse
+      resources:                           
+          requests:
+            cpu: 1
+          limits:
+            cpu: 1
+  endpoints:
+    - name: server
+      port: 3000
+      public: true
+  volumes:
+  - name: dagster-data
+    source: block
+    size: 5Gi

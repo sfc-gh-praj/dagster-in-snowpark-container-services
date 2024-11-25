@@ -1,0 +1,214 @@
+2024-11-25 10:57:50 +0000 - dagster - DEBUG - __ASSET_JOB - 760d4575-2165-49f9-8e5e-c1645352c4c4 - 511 - LOGS_CAPTURED - Started capturing logs in process (pid: 511).
+2024-11-25 10:57:50 +0000 - dagster - DEBUG - __ASSET_JOB - 760d4575-2165-49f9-8e5e-c1645352c4c4 - 511 - example_snowpark_asset - STEP_START - Started execution of step "example_snowpark_asset".
+DEBUG:dagster_project.snowpark_demo.resouces:found token file...
+DEBUG:dagster_project.snowpark_demo.resouces:Get env variables...
+INFO:snowflake.connector.connection:Snowflake Connector for Python Version: 3.12.3, Python Version: 3.10.15, Platform: Linux-6.10.11-linuxkit-x86_64-with-glibc2.36
+DEBUG:snowflake.connector.connection:connect
+DEBUG:snowflake.connector.connection:__config
+INFO:snowflake.connector.connection:Connecting to GLOBAL Snowflake domain
+INFO:snowflake.connector.connection:This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+DEBUG:snowflake.connector.converter:use_numpy: False
+DEBUG:snowflake.connector.connection:REST API object was created: JKB50721.us-east-1.snowflakecomputing.com:443
+DEBUG:snowflake.connector.auth._auth:authenticate
+DEBUG:snowflake.connector.auth._auth:account=JKB50721, user=phani, database=DAGSTERDB, schema=public, warehouse=small_warehouse, role=DAGSTER_ROLE, request_id=d92304de-cf1a-4482-a999-de9beac83956
+DEBUG:snowflake.connector.auth._auth:body['data']: {'CLIENT_APP_ID': 'PythonSnowpark', 'CLIENT_APP_VERSION': '1.25.0', 'SVN_REVISION': None, 'ACCOUNT_NAME': 'JKB50721', 'LOGIN_NAME': 'phani', 'CLIENT_ENVIRONMENT': {'APPLICATION': 'PythonSnowpark', 'OS': 'Linux', 'OS_VERSION': 'Linux-6.10.11-linuxkit-x86_64-with-glibc2.36', 'PYTHON_VERSION': '3.10.15', 'PYTHON_RUNTIME': 'CPython', 'PYTHON_COMPILER': 'GCC 12.2.0', 'OCSP_MODE': 'FAIL_OPEN', 'TRACING': 10, 'LOGIN_TIMEOUT': None, 'NETWORK_TIMEOUT': None, 'SOCKET_TIMEOUT': None}, 'PASSWORD': '******', 'SESSION_PARAMETERS': {'CLIENT_PREFETCH_THREADS': 4}}
+DEBUG:snowflake.connector.vendored.urllib3.util.retry:Converted retries value: 1 -> Retry(total=1, connect=None, read=None, redirect=None, status=None)
+DEBUG:snowflake.connector.vendored.urllib3.util.retry:Converted retries value: 1 -> Retry(total=1, connect=None, read=None, redirect=None, status=None)
+DEBUG:snowflake.connector.network:Session status for SessionPool 'jkb50721.us-east-1.snowflakecomputing.com', SessionPool 1/1 active sessions
+DEBUG:snowflake.connector.network:remaining request timeout: N/A ms, retry cnt: 1
+DEBUG:snowflake.connector.network:Request guid: 090ea255-5418-453b-805f-d8679d64a61d
+DEBUG:snowflake.connector.network:socket timeout: 60
+DEBUG:snowflake.connector.vendored.urllib3.connectionpool:Starting new HTTPS connection (1): jkb50721.us-east-1.snowflakecomputing.com:443
+DEBUG:snowflake.connector.ssl_wrap_socket:OCSP Mode: FAIL_OPEN, OCSP response cache file name: None
+DEBUG:snowflake.connector.ocsp_snowflake:cache directory: /root/.cache/snowflake
+DEBUG:snowflake.connector.ocsp_snowflake:ocsp_response_cache_uri: file:///root/.cache/snowflake/ocsp_response_cache.json
+DEBUG:snowflake.connector.ocsp_snowflake:OCSP_VALIDATION_CACHE size: 0
+DEBUG:snowflake.connector.ocsp_snowflake:OCSP response cache server is enabled: http://ocsp.snowflakecomputing.com/ocsp_response_cache.json
+DEBUG:snowflake.connector.ocsp_snowflake:OCSP dynamic cache server RETRY URL: None
+DEBUG:snowflake.connector.ocsp_snowflake:Failed to check OCSP response cache file. No worry. It will validate with OCSP server: file: /root/.cache/snowflake/ocsp_response_cache.json, lock directory: /root/.cache/snowflake/ocsp_response_cache.json.lck, error: [Errno 2] No such file or directory: '/root/.cache/snowflake/ocsp_response_cache.json'
+DEBUG:snowflake.connector.ocsp_snowflake:Failed to locate OCSP response cache file. No worry. It will validate with OCSP server: /root/.cache/snowflake/ocsp_response_cache.json
+DEBUG:snowflake.connector.ocsp_snowflake:validating certificate: jkb50721.us-east-1.snowflakecomputing.com
+DEBUG:snowflake.connector.ocsp_asn1crypto:# of certificates: 3
+DEBUG:snowflake.connector.ocsp_asn1crypto:subject: OrderedDict([('country_name', 'US'), ('state_or_province_name', 'California'), ('locality_name', 'San Mateo'), ('organization_name', 'Snowflake Inc.'), ('common_name', '*.va3.us-east-1.aws.snowflakecomputing.com')]), issuer: OrderedDict([('country_name', 'US'), ('organization_name', 'DigiCert Inc'), ('common_name', 'DigiCert Global G2 TLS RSA SHA256 2020 CA1')])
+DEBUG:snowflake.connector.ocsp_asn1crypto:subject: OrderedDict([('country_name', 'US'), ('organization_name', 'DigiCert Inc'), ('common_name', 'DigiCert Global G2 TLS RSA SHA256 2020 CA1')]), issuer: OrderedDict([('country_name', 'US'), ('organization_name', 'DigiCert Inc'), ('organizational_unit_name', 'www.digicert.com'), ('common_name', 'DigiCert Global Root G2')])
+DEBUG:snowflake.connector.ocsp_asn1crypto:subject: OrderedDict([('country_name', 'US'), ('organization_name', 'DigiCert Inc'), ('organizational_unit_name', 'www.digicert.com'), ('common_name', 'DigiCert Global Root G2')]), issuer: OrderedDict([('country_name', 'US'), ('organization_name', 'DigiCert Inc'), ('organizational_unit_name', 'www.digicert.com'), ('common_name', 'DigiCert Global Root G2')])
+DEBUG:snowflake.connector.ocsp_snowflake:cache miss for subject: 'OrderedDict([('country_name', 'US'), ('state_or_province_name', 'California'), ('locality_name', 'San Mateo'), ('organization_name', 'Snowflake Inc.'), ('common_name', '*.va3.us-east-1.aws.snowflakecomputing.com')])'
+DEBUG:snowflake.connector.ocsp_snowflake:started downloading OCSP response cache file: http://ocsp.snowflakecomputing.com/ocsp_response_cache.json
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): ocsp.snowflakecomputing.com:80
+DEBUG:urllib3.connectionpool:http://ocsp.snowflakecomputing.com:80 "GET /ocsp_response_cache.json HTTP/11" 200 293102
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2025-01-15 00:00:00+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2026-07-22 00:00:00+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2026-07-22 00:00:00+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2025-05-07 12:00:00+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2026-07-22 00:00:00+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2026-07-22 00:00:00+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:15+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:15+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:15+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:15+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:15+00:00
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the attached certificate is signed by the issuer. Valid Not After: 2024-12-23 15:50:16+00:00
+DEBUG:snowflake.connector.ocsp_snowflake:ended downloading OCSP response cache file. elapsed time: 1.8039155006408691s
+DEBUG:snowflake.connector.ocsp_snowflake:downloaded OCSP response cache file from http://ocsp.snowflakecomputing.com/ocsp_response_cache.json
+DEBUG:snowflake.connector.ocsp_snowflake:# of certificates: 295
+DEBUG:snowflake.connector.ocsp_snowflake:hit cache for subject: OrderedDict([('country_name', 'US'), ('state_or_province_name', 'California'), ('locality_name', 'San Mateo'), ('organization_name', 'Snowflake Inc.'), ('common_name', '*.va3.us-east-1.aws.snowflakecomputing.com')])
+DEBUG:snowflake.connector.ocsp_snowflake:using OCSP response cache
+DEBUG:snowflake.connector.ocsp_asn1crypto:Certificate is NOT attached in Basic OCSP Response. Using issuer's certificate
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the OCSP response is signed by the issuer.
+DEBUG:snowflake.connector.ocsp_snowflake:hit cache for subject: OrderedDict([('country_name', 'US'), ('organization_name', 'DigiCert Inc'), ('common_name', 'DigiCert Global G2 TLS RSA SHA256 2020 CA1')])
+DEBUG:snowflake.connector.ocsp_snowflake:using OCSP response cache
+DEBUG:snowflake.connector.ocsp_asn1crypto:Certificate is NOT attached in Basic OCSP Response. Using issuer's certificate
+DEBUG:snowflake.connector.ocsp_asn1crypto:Verifying the OCSP response is signed by the issuer.
+DEBUG:filelock:Attempting to acquire lock 140736646626512 on /root/.cache/snowflake/ocsp_response_validation_cache.lock
+DEBUG:filelock:Lock 140736646626512 acquired on /root/.cache/snowflake/ocsp_response_validation_cache.lock
+DEBUG:filelock:Attempting to release lock 140736646626512 on /root/.cache/snowflake/ocsp_response_validation_cache.lock
+DEBUG:filelock:Lock 140736646626512 released on /root/.cache/snowflake/ocsp_response_validation_cache.lock
+DEBUG:snowflake.connector.ocsp_snowflake:writing OCSP response cache file to /root/.cache/snowflake/ocsp_response_cache.json
+DEBUG:snowflake.connector.ocsp_snowflake:encoding OCSP response cache to JSON
+DEBUG:snowflake.connector.ocsp_snowflake:ok
+DEBUG:snowflake.connector.vendored.urllib3.connectionpool:https://jkb50721.us-east-1.snowflakecomputing.com:443 "POST /session/v1/login-request?request_id=d92304de-cf1a-4482-a999-de9beac83956&databaseName=DAGSTERDB&schemaName=public&warehouse=small_warehouse&roleName=DAGSTER_ROLE&request_guid=090ea255-5418-453b-805f-d8679d64a61d HTTP/1.1" 200 5402
+DEBUG:snowflake.connector.network:SUCCESS
+DEBUG:snowflake.connector.network:Session status for SessionPool 'jkb50721.us-east-1.snowflakecomputing.com', SessionPool 0/1 active sessions
+DEBUG:snowflake.connector.network:ret[code] = None, after post request
+DEBUG:snowflake.connector.auth._auth:completed authentication
+DEBUG:snowflake.connector.auth._auth:token = ******
+DEBUG:snowflake.connector.auth._auth:master_token = ******
+DEBUG:snowflake.connector.auth._auth:id_token = NULL
+DEBUG:snowflake.connector.auth._auth:mfa_token = NULL
+DEBUG:snowflake.connector.connection:cursor
+INFO:snowflake.snowpark.session:Snowpark Session information: 
+"version" : 1.25.0,
+"python.version" : 3.10.15,
+"python.connector.version" : 3.12.3,
+"python.connector.session.id" : 405749890357926,
+"os.name" : Linux
+
+DEBUG:snowflake.connector.cursor:executing SQL/command
+DEBUG:snowflake.connector.cursor:query: [SELECT * FROM all_claims_raw LIMIT 10]
+DEBUG:snowflake.connector.connection:sequence counter: 1
+DEBUG:snowflake.connector.cursor:Request id: 701e11ea-09be-4fc3-b63f-574c960884ac
+DEBUG:snowflake.connector.cursor:running query [SELECT * FROM all_claims_raw LIMIT 10]
+DEBUG:snowflake.connector.cursor:is_file_transfer: True
+DEBUG:snowflake.connector.connection:_cmd_query
+DEBUG:snowflake.connector._query_context_cache:serialize_to_dict() called
+DEBUG:snowflake.connector.connection:sql=[SELECT * FROM all_claims_raw LIMIT 10], sequence_id=[1], is_file_transfer=[False]
+DEBUG:snowflake.connector.network:Opentelemtry otel injection failed because of: No module named 'opentelemetry'
+DEBUG:snowflake.connector.network:Session status for SessionPool 'jkb50721.us-east-1.snowflakecomputing.com', SessionPool 1/1 active sessions
+DEBUG:snowflake.connector.network:remaining request timeout: N/A ms, retry cnt: 1
+DEBUG:snowflake.connector.network:Request guid: 00f3fa53-5a22-4a74-a932-e65f83a3237f
+DEBUG:snowflake.connector.network:socket timeout: 60
+DEBUG:snowflake.connector.vendored.urllib3.connectionpool:https://jkb50721.us-east-1.snowflakecomputing.com:443 "POST /queries/v1/query-request?requestId=701e11ea-09be-4fc3-b63f-574c960884ac&request_guid=00f3fa53-5a22-4a74-a932-e65f83a3237f HTTP/1.1" 200 None
+DEBUG:snowflake.connector.network:SUCCESS
+DEBUG:snowflake.connector.network:Session status for SessionPool 'jkb50721.us-east-1.snowflakecomputing.com', SessionPool 0/1 active sessions
+DEBUG:snowflake.connector.network:ret[code] = 002003, after post request
+DEBUG:snowflake.connector.network:Query id: 01b89b11-010b-87ae-0001-710702046716
+DEBUG:snowflake.connector.cursor:sfqid: 01b89b11-010b-87ae-0001-710702046716
+DEBUG:snowflake.connector.cursor:query execution done
+DEBUG:snowflake.connector.cursor:{'data': {'internalError': False, 'unredactedFromSecureObject': False, 'errorCode': '002003', 'age': 0, 'sqlState': '42S02', 'queryId': '01b89b11-010b-87ae-0001-710702046716', 'line': 1, 'pos': 14, 'type': 'COMPILATION'}, 'code': '002003', 'message': "SQL compilation error:\nObject 'ALL_CLAIMS_RAW' does not exist or not authorized.", 'success': False, 'headers': None}
+2024-11-25 10:57:54 +0000 - dagster - ERROR - __ASSET_JOB - 760d4575-2165-49f9-8e5e-c1645352c4c4 - 511 - example_snowpark_asset - STEP_FAILURE - Execution of step "example_snowpark_asset" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "example_snowpark_asset"::
+
+snowflake.snowpark.exceptions.SnowparkSQLException: (1304): 01b89b11-010b-87ae-0001-710702046716: 002003 (42S02): 01b89b11-010b-87ae-0001-710702046716: SQL compilation error:
+Object 'ALL_CLAIMS_RAW' does not exist or not authorized.
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 482, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 140, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 128, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/app/dagster_project/snowpark_demo/assets/snowparkrun.py", line 23, in example_snowpark_asset
+    results.write.mode("overwrite").save_as_table("Dagster_DemoTable")
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/telemetry.py", line 227, in wrap
+    result = func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/dataframe_writer.py", line 313, in save_as_table
+    snowflake_plan = session._analyzer.resolve(create_table_logic_plan)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/analyzer/analyzer.py", line 776, in resolve
+    result = self.do_resolve(logical_plan)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/analyzer/analyzer.py", line 824, in do_resolve
+    res = self.do_resolve_with_resolved_children(
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/analyzer/analyzer.py", line 1021, in do_resolve_with_resolved_children
+    child_attributes=resolved_child.attributes,
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/analyzer/snowflake_plan.py", line 355, in attributes
+    attributes = analyze_attributes(self.schema_query, self.session)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/analyzer/schema_utils.py", line 93, in analyze_attributes
+    return session._get_result_attributes(sql)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/session.py", line 2438, in _get_result_attributes
+    return self._conn.get_result_attributes(query)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/analyzer/snowflake_plan.py", line 205, in wrap
+    raise ne.with_traceback(tb) from None
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/analyzer/snowflake_plan.py", line 136, in wrap
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/server_connection.py", line 268, in get_result_attributes
+    self._run_new_describe(self._cursor, query), self.max_string_size
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/server_connection.py", line 274, in _run_new_describe
+    result_metadata = run_new_describe(cursor, query)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/analyzer/schema_utils.py", line 147, in run_new_describe
+    return cursor._describe_internal(query)  # pyright: ignore
+  File "/usr/local/lib/python3.10/site-packages/snowflake/connector/cursor.py", line 1137, in _describe_internal
+    self.execute(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/connector/cursor.py", line 1097, in execute
+    Error.errorhandler_wrapper(self.connection, self, error_class, errvalue)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/connector/errors.py", line 284, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/usr/local/lib/python3.10/site-packages/snowflake/connector/errors.py", line 339, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/connector/errors.py", line 215, in default_errorhandler
+    raise error_class(
+
+The above exception occurred during handling of the following exception:
+snowflake.connector.errors.ProgrammingError: 002003 (42S02): 01b89b11-010b-87ae-0001-710702046716: SQL compilation error:
+Object 'ALL_CLAIMS_RAW' does not exist or not authorized.
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/analyzer/snowflake_plan.py", line 136, in wrap
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/server_connection.py", line 268, in get_result_attributes
+    self._run_new_describe(self._cursor, query), self.max_string_size
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/server_connection.py", line 274, in _run_new_describe
+    result_metadata = run_new_describe(cursor, query)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/snowpark/_internal/analyzer/schema_utils.py", line 147, in run_new_describe
+    return cursor._describe_internal(query)  # pyright: ignore
+  File "/usr/local/lib/python3.10/site-packages/snowflake/connector/cursor.py", line 1137, in _describe_internal
+    self.execute(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/connector/cursor.py", line 1097, in execute
+    Error.errorhandler_wrapper(self.connection, self, error_class, errvalue)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/connector/errors.py", line 284, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/usr/local/lib/python3.10/site-packages/snowflake/connector/errors.py", line 339, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/usr/local/lib/python3.10/site-packages/snowflake/connector/errors.py", line 215, in default_errorhandler
+    raise error_class(
+

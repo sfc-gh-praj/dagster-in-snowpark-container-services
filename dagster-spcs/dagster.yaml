@@ -1,0 +1,9 @@
+
+telemetry:
+  enabled: false
+nux:
+  enabled: false
+
+storage:
+  sqlite:
+    base_dir: /opt/dagster/dagster_home
