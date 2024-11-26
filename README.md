@@ -3,13 +3,13 @@ Orchestrating and Running your Data pipelines using Dagster in Snowpark Containe
 
 In order to run the dagtser in the container on your local machine, we need to set some environment variables in our terminal session before running the container. The variables to set are:
 
-SNOWFLAKE_ACCOUNT - the account locator for the Snowflake account
-SNOWFLAKE_USER - the Snowflake username to use
-SNOWFLAKE_PASSWORD - the password for the Snowflake user
-SNOWFLAKE_WAREHOUSE - the warehouse to use
-SNOWFLAKE_DATABASE - the database to set as the current database (does not really matter that much what this is set to)
-SNOWFLAKE_SCHEMA - the schema in the database to set as the current schema (does not really matter that much what this is set to)
-SNOWFLAKE_ROLE - the role which has access to the DB
+- SNOWFLAKE_ACCOUNT - the account locator for the Snowflake account
+- SNOWFLAKE_USER - the Snowflake username to use
+- SNOWFLAKE_PASSWORD - the password for the Snowflake user
+- SNOWFLAKE_WAREHOUSE - the warehouse to use
+- SNOWFLAKE_DATABASE - the database to set as the current database (does not really matter that much what this is set to)
+- SNOWFLAKE_SCHEMA - the schema in the database to set as the current schema (does not really matter that much what this is set to)
+- SNOWFLAKE_ROLE - the role which has access to the DB
 
 Once the environmental variables are set go to the [dagster-spcs](dagster-spcs) folder and make changes to the orgname-account name and also change the login name in the [Makefile](dagster-spcs/Makefile) run the following command.
 
