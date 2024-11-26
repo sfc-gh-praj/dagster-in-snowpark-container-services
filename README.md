@@ -32,7 +32,7 @@ docker compose down
 
 - Docker installed on your local machine (for building the custom image)
 - Snowflake non-trail account
-- Complete the following tutorial as that will be used in the assets.
+- Complete the following tutorial as that will be used in the assets. This will create an image which is pushed to Snowflake image registry.
 
 https://docs.snowflake.com/en/developer-guide/snowpark-container-services/tutorials/tutorial-2
 
@@ -188,61 +188,16 @@ SELECT "ingress_url" FROM table(RESULT_SCAN(LAST_QUERY_ID(-1)));
 ```
 ![endpoints](/dagster_ui.png)
 
-When you access the endpoint after logging in, below is the type of the content you will see which implies ES is running fine.
 
-```json
-{
-  "name" : "statefulset-0",
-  "cluster_name" : "es_cluster",
-  "cluster_uuid" : "oXGP1hTAQBqV8cSP1uZc5w",
-  "version" : {
-    "number" : "8.14.2",
-    "build_flavor" : "default",
-    "build_type" : "docker",
-    "build_hash" : "2afe7caceec8a26ff53817e5ed88235e90592a1b",
-    "build_date" : "2024-07-01T22:06:58.515911606Z",
-    "build_snapshot" : false,
-    "lucene_version" : "9.10.0",
-    "minimum_wire_compatibility_version" : "7.17.0",
-    "minimum_index_compatibility_version" : "7.0.0"
-  },
-  "tagline" : "You Know, for Search"
-}
+### 6. Cleanup
+
+```sql
+
+drop service dagster_ui force;
+
+drop compute pool PR_CPU_S;
+
+drop compute pool PR_STD_POOL_XS;
+
+drop compute pool PR_STD_POOL_S;
 ```
-
-### 6. Launching Kibana
-
-Run the following query in snowsight to get the endpoint URL of kibana.  Below query should give you endpoints in the ingress_url column.  Get the value for http.
-```sql
-show endpoints in service kibana_svc;
-```
-
-When you launch the endpoint after logging in you will be asked to `Configure Elastic` or enter the enrollment token. This is asked as we are not using any credentials for the Elastic Search. 
-
-Here you can clik on `Configure manually` and enter `http://elasticsearcg-svc:9200`. After you provide the elastic search url it will prompt to enter the `Verification-code ` which you can find from the Kibana container logs.
-
-```sql
-SELECT value AS log_line
-FROM TABLE(
- SPLIT_TO_TABLE(SYSTEM$GET_SERVICE_LOGS('kibana_svc', 0, 'kibana-container'), '\n')
-  );
-  ```
-
-In the logs you will see a line at the end for the `verification code` and use that code and click on verify which will launch home page:
-
-`Your verification code is:  124 602 `
-
-
-By now you are all set to use Kibana and you can use sample data to load data into Elastic Search use dev tool to view the data from the same console.
-
-![kibana](/kibana.png)
-
-### 7. Cleanup
-
-```sql
-
-drop service kibana_svc;
-
-drop service elasticsearcg_svc FORCE; 
-
-drop compute pool PR_CPU_M;
