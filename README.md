@@ -11,10 +11,10 @@ SNOWFLAKE_DATABASE - the database to set as the current database (does not reall
 SNOWFLAKE_SCHEMA - the schema in the database to set as the current schema (does not really matter that much what this is set to)
 SNOWFLAKE_ROLE - the role which has access to the DB
 
-Once the environmental variables are set go to the dagster-spcs folder and make changes to the orgname-account name and also change the login name run the following command.
+Once the environmental variables are set go to the [dagster-spcs](dagster-spcs) folder and make changes to the orgname-account name and also change the login name in the [Makefile](dagster-spcs/Makefile) run the following command.
 
 ```bash 
-make build
+make build all
 ```
 
 For local testing bring up the containers on your local machine by running the below.
@@ -39,7 +39,7 @@ https://docs.snowflake.com/en/developer-guide/snowpark-container-services/tutori
 
 ## Steps to Deploy 
 
-Download and unzip the repo and you find a Readme.md and dagster-spcs folder which has all the code required.
+Download and unzip the repo and you find a Readme.md and [dagster-spcs](dagster-spcs) folder which has all the code required.
 
 ### 1. Setup
 
@@ -132,13 +132,13 @@ SHOW IMAGE REPOSITORIES;
 
 ### 2. Build and Push the Dagster custom Docker Image to SPCS
 
-Edit the Makefile and update the value for SNOWFLAKE_REPO? and IMAGE_REGISTRY. This should be your image repository URL. After making the required changes, run the following command from your terminal and ensure you in the folder which has the dockerfile and the makefile. Make the changes to SNOWFLAKE_REPO , IMAGE_REGISTRY and LOGIN_NAME in the Makefile.
+Edit the [Makefile](dagster-spcs/Makefile) and update the value for SNOWFLAKE_REPO? and IMAGE_REGISTRY. This should be your image repository URL. After making the required changes, run the following command from your terminal and ensure you in the folder which has the dockerfile and the makefile. Make the changes to SNOWFLAKE_REPO , IMAGE_REGISTRY and LOGIN_NAME in the Makefile.
 
 ``` bash
 make all
 ```
 
-> Note: Above command will build the custom images and pushes it to the SPCS image repositories.
+> Note: Above command will build the custom images and pushes it to the SPCS image repository.
 
 ### 3. Upload the SPCS YAML files 
 
