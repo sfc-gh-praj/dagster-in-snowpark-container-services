@@ -14,7 +14,7 @@ In order to run the dagtser in the container on your local machine, we need to s
 Once the environmental variables are set go to the [dagster-spcs](dagster-spcs) folder and make changes to the orgname-account name and also change the login name in the [Makefile](dagster-spcs/Makefile) run the following command.
 
 ```bash 
-make build all
+make build
 ```
 
 For local testing bring up the containers on your local machine by running the below.
